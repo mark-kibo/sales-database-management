@@ -1,24 +1,13 @@
 from models.models import session
 from models.models import Branch, Supplier, Customer
-
+from menu import menu
 # Create the SQLAlchemy engine and session
 
 def main():
     """Sales Management CLI"""
     while True:
-        print("\nAvailable Commands:")
-        print("1. Create Branch")
-        print("2. Get Branch by ID")
-        print("3. Create Supplier")
-        print("4. Get Supplier by ID")
-        print("5. Create Customer")
-        print("6. Get Customer by ID")
-        print("7. See Customer's Branches")
-        print("8. Add Customer to a Branch")
-        print("9. Add Supplier to a Branch")
-        print("10. See Suppliers in a Branch")
-        print("11. See Branches of a Supplier")
-        print("12. Exit")
+        # call my menu
+        menu()
 
         choice = input("Enter your choice: ")
 
