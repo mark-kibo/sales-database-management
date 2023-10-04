@@ -65,6 +65,16 @@ class Branch(Base):
      # Fetch suppliers associated with this branch
     def get_suppliers(self):
         return self.suppliers
+    
+    def add_customer(self, customer):
+        self.customers.append(customer)
+        session.commit()
+
+    # Method to add a supplier to this branch
+    def add_supplier(self, supplier):
+        self.suppliers.append(supplier)
+        session.commit()
+
 
 class Supplier(Base):
     __tablename__ = "suppliers"
@@ -108,6 +118,10 @@ class Supplier(Base):
     # Fetch branches associated with this supplier
     def get_branches(self):
         return self.branches
+    
+    def add_branch(self, branch):
+        self.branches.append(branch)
+        session.commit()
 
 class Customer(Base):
     __tablename__ = "customers"
